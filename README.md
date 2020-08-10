@@ -4,7 +4,7 @@
 
 ## LAB2
 
-In makefile
+### makefile
 
 ```make demo_1```: Compile and Run Gtkwave for Binary Subtractor
 
@@ -13,6 +13,8 @@ In makefile
 ```make demo_3```: Compile and Run Gtkwave for Ripple Borrow Subtractor
 
 ```make demo_4```: Compile and Run Gtkwave for 4-bit binary multiplier
+
+```make clean```: clean all *.vcd file
 
 ### Design of Binary Subtractor
 

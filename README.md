@@ -14,7 +14,7 @@
 
 ```make demo_4```: Compile and Run Gtkwave for 4-bit binary multiplier
 
-```make clean```: clean all *.vcd file
+```make clean``` : Clean all *.vcd file
 
 ### Design of Binary Subtractor
 

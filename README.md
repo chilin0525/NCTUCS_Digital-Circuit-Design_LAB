@@ -4,6 +4,10 @@
 
 ## LAB2
 
+### Nice SOurce
+
+![binary-calculator](https://www.calculator.net/binary-calculator.html?number1=1001&c2op=x&number2=0110&calctype=op&x=70&y=14)
+
 ### makefile
 
 ```make demo_1```: Compile and Run Gtkwave for Binary Subtractor

@@ -77,3 +77,50 @@ end
 
 endmodule
 ```
+
+&nbsp;
+
+### T flip-flop
+
+![](https://i.imgur.com/ft8uvN9.png)
+
+```verilog
+module(Q,T,Clk,rst);
+
+output Q;
+input T,Clk,rst;
+reg Q;
+
+always@(posedge Clk,negedge rst)begin
+    if(!rst) D<=1'b0;
+    else if(T) Q<=!Q;
+end
+
+endmodule
+```
+
+&nbsp;
+
+### JK flip-flop
+
+![](https://i.imgur.com/JJQvhou.png)
+![](https://i.imgur.com/0VT53S9.png)
+
+```verilog
+module(Q,QB,J,K,clk);
+
+output Q,QB;
+input J,K,clk;
+reg Q;
+
+assign QB=~Q;
+always@(posedge Clk)begin
+    case({J,K})
+        2'b00: Q<=Q;
+        2'b01: Q<=1'b0;
+        2'b10: Q<=1'b1;
+        2'b11: Q<=~Q;
+    endcase
+end
+endmodule
+```

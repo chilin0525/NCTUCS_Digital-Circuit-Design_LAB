@@ -124,3 +124,43 @@ always@(posedge Clk)begin
 end
 endmodule
 ```
+
+&nbsp;
+
+## State Diagram
+
+![](https://i.imgur.com/hfKZsID.png)
+
+![](https://i.imgur.com/myxHXYY.png)
+
+```verilog
+module mearly_type(output reg y,input x,clk,rst)
+
+reg [1:0] state,next_state;
+parameter s0=2'b00;
+parameter s1=2'b01;
+parameter s2=2'b10;
+parameter s3=2'b11;
+
+always@(posedge clk,negedge rst)begin
+    if(!rst)state<=0;
+    else state<=next_state;
+end
+
+always@(state,x)begin
+    case(state)
+        s0:if(x)next_state=s1;else next_state=s2;
+        s1:if(x)next_state=s3;else next_state=s0;
+        s2:if(x)next_state=s2;else next_state=s0;
+        s3:if(x)next_state=s2;else next_state=s0;
+    endcase
+end
+
+always@(state,x)begin
+    case(state)
+        s0:y=1'b0;
+        s1,s2,s3: y=!x;
+    endcase
+end    
+endmodule
+```

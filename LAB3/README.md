@@ -164,3 +164,28 @@ always@(state,x)begin
 end    
 endmodule
 ```
+
+<br>
+
+## Register
+![](https://i.imgur.com/RHjmMv7.png)
+
+```verilog
+module shift_Register();
+
+input [3:0] in;
+input s1,s0,lsb,msb,clk,clear;
+output reg [3:0]out;
+
+always@(posedge clk,negedge clear)begin
+	if(!clear)out<=4'b0000;
+	else
+		case({s1,s0})
+			2'b00:out<=out;
+			2'b01:out<={msb,out[3:1]};
+			2'b10:out<={out[2:0],lsb};
+			2'b11:out<=in;
+		endcase
+end
+endmodule
+```

@@ -30,9 +30,8 @@ always@(state,x)begin
 end
 
 always@(state,x)begin
-    z=0;
-    if(x==0 && state==s6) z=1;
-    else if(x==1 && state==s7) z=1;
+    if((state==s6 && x==0)||(state==s7 && x==1))z=1;
+    else z=0;
 end
 
 endmodule

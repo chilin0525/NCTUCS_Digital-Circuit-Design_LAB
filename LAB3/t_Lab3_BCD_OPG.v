@@ -1,10 +1,10 @@
 module t_Lab3_BCD_OPG();
 
-wire z;
+wire z1,z2;
 reg  x,clock,reset;
 
-Lab3_BCD_OPG_state_diagram M1(z,x,clock,reset);
-Lab3_BCD_OPG_structure M2(z,x,clock,reset);
+Lab3_BCD_OPG_state_diagram M1(z1,x,clock,reset);
+Lab3_BCD_OPG_structure M2(z2,x,clock,reset);
 
 initial begin
     clock=1'b0;
